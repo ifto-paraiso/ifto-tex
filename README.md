@@ -15,9 +15,15 @@ Siga os seguintes passos:
 
 1. Clique aqui para baixar o modelo IFTO-TEX;
 2. Descompacte o arquivo no diretório onde você deseja guardar os arquivos do seu trabalho;
-3. Crie o seu texto a partir do arquivo *tcc.tex* (ou *pre-projexo.tex*) distribuído no arquivo baixado. O arquivo possui comentários explicativos
+3. Crie o seu texto a partir do arquivo **tcc.tex** (ou **pre-projexo.tex**) distribuído no arquivo baixado. O arquivo possui comentários explicativos.
 
 > Se você é iniciante em LaTeX ou em abnTex2, dê uma conferida nos [manuais do abnTex2](https://github.com/abntex/abntex2/wiki/PorOndeComecar).
+
+## Regulamento de Trabalho de Conclusão de Curso (TCC) dos Cursos de Graduação Presenciais do IFTO
+
+Aprovado pela Resolução *ad referendum* no 02/2012/CONSUP/IFTO, de 30 de agosto de 2012, referendado e alterado pela Resolução no 34/2012/CONSUP/IFTO, de 24 de outubro de 2012 e alterado pela Resolução no 72/2013/CONSUP/IFTO, de 11 de dezembro de 2013 e alterado pela Resolução no 44/2015/CONSUP/IFTO, de 22 de setembro de 2015.
+
+> O documento na íntegra consta nos arquivos do IFTO-TeX.
 
 ## Observações
 

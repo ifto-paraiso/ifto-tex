@@ -21,4 +21,4 @@ Siga os seguintes passos:
 
 ## Observações
 
-O IFTO-TeX é fornecido gratuitamente e sem garantias e pode ser redistribuído livremente para fins acadêmicos. Trata-se de um  extra-oficial e não está oficialmente vinculada ao IFTO.
+O IFTO-TeX é fornecido gratuitamente e sem garantias e pode ser redistribuído livremente para fins acadêmicos. Trata-se de um produto extra-oficial e não está oficialmente vinculado ao IFTO.

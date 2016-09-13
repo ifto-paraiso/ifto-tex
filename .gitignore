@@ -1,0 +1,13 @@
+*.aux
+*.idx
+*.lof
+*.log
+*.toc
+*.gz
+*.brf
+*.lot
+*.bbl
+*.blg
+*.ilg
+*.ind
+*.tdo

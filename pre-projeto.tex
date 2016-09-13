@@ -1,0 +1,261 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% IFTO-Tex (v1.0)
+% https://github.com/renatouchoa/ifto-tex
+%
+% MODELO DO PRÉ-PROJETO DE TCC DO IFTO
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% MIT License
+% 
+% Copyright (c) 2016 Renato Uchôa Brandão
+% 
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+% 
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+% 
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{ifto-tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inclusão de pacotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{float}
+
+% Uso da fonte Arial (IFTO)
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Incluir pacotes adicionais, caso sejam necessários ....
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configuração das citações
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf,
+versalete,
+abnt-emphasize = bf, % destaca o titulo em negrito;
+abnt-etal-list = 3, % trabalhos com mais de 3 autores recebem et al.,;
+abnt-etal-text = it, % escreve o et al., em italico;
+abnt-and-type = &, % usa o carater '&' no lugar de 'e' para mais de um autor;
+abnt-last-names = abnt, % trata sobrenomes 'estritamente' conforme a ABNT; e
+abnt-repeated-author-omit = yes % autores com + de uma entrada recebem '____.'
+]{abntex2cite}
+
+% Configuração das referências bibliográficas
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Informações da capa e da folha de rosto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titulo{TÍTULO DO TRABALHO: Subtítulo do trabalho}
+
+\autor{Autor(a) do Trabalho}
+
+\local{Paraíso do Tocantins, TO}
+
+\data{2016}
+
+% Alterar o nome do campus e do curso, caso houver necessidade
+\instituicao{
+	Instituto Federal de Educação, Ciência e Tecnologia do Tocantins - IFTO\\
+	Campus Paraíso do Tocantins\\
+	Curso Superior de Tecnologia em Gestão da Tecnologia da Informação
+}
+
+\tipotrabalho{TCC}
+
+% Informar {Titulação}{Nome}
+\orientador{Prof(a). Dr(a).}{Nome do(a) Professor(a) Orientador(a)}
+
+% Alterar o preâmbulo conforme necessário
+\preambulo{Pré-projeto do Trabalho de Conclusão de Curso
+	apresentado como requisito parcial para
+	obtenção do Título de tecnólogo do Curso Superior
+	de Tecnologia em Gestão da Tecnologia da Informação do Instituto Federal do Tocantins,
+	Campus Paraíso do Tocantins
+}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Outras configurações
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configuração da geração do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		colorlinks=false,
+		bookmarksdepth=4,
+		pdfborder={0 0 0},
+}
+\makeatother
+
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% compila o indice
+\makeindex
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CORPO DO TRABALHO ...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% Inicializa a parte pre-textual
+\pretextual
+
+% Imprime a capa
+\imprimircapa
+
+% Imprime a folha de rosto
+\imprimirfolhaderosto
+
+% ------------------------------------------------------------------------------
+% LISTA DE FIGURAS (Não altere nada aqui)
+% ------------------------------------------------------------------------------
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+
+% ------------------------------------------------------------------------------
+% LISTA DE TABELAS (Não altere nada aqui)
+% ------------------------------------------------------------------------------
+\pdfbookmark[0]{\contentsname}{lot}
+\listoftables*
+\cleardoublepage
+
+% ------------------------------------------------------------------------------
+% LISTA DE SIGLAS E ABREVIATURAS
+% ------------------------------------------------------------------------------
+% Edite a lista de siglas conforme o modelo abaixo
+\begin{siglas}
+	\item[IBGE]{Instituto Brasileiro de Geografia e Estatística}
+	\item[IFTO]{Instituto Federal do Tocantins}
+	% Incluir as siglas aqui ...
+\end{siglas}
+
+
+% ------------------------------------------------------------------------------
+% SUMÁRIO (Não altere nada aqui)
+% ------------------------------------------------------------------------------
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% ------------------------------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ------------------------------------------------------------------------------
+
+% Introduz a parte textual
+\textual
+
+\chapter{Introdução}
+
+	Parte inicial do texto que visa inserir o leitor no assunto trabalhado na sequência. Deve apresentar de forma geral o trabalho e, em especial, deve abordar o problema, os objetivos e a justificativa do trabalho.
+
+\chapter{Problema de pesquisa}
+	
+		Apresentação do problema que norteará a pesquisa para o TCC. A enunciação do problema deve ser,	preferencialmente, em forma de uma pergunta.
+	
+\chapter{Justificativa}
+	
+		Texto construído com a intenção de mostrar	a relevância, a importância, a pertinência e a viabilidade do trabalho.
+	
+\chapter{Objetivos}
+	
+	\section{Objetivo geral}
+	
+		O Objetivo Geral deve ter relação íntima com o problema de	pesquisa e deve apontar o rumo a ser percorrido para encontrar a resposta. Já os	Objetivos Específicos desdobram o Objetivo Geral nos passos necessários para executar o	Objetivo Geral. Os objetivos devem indicar	exatamente a ação a ser tomada.
+	
+	\section{Objetivos específicos}
+	
+		\begin{enumerate}
+			\item Objetivo específico 1;
+			\item Objetivo específico 2;
+			\item Objetivo específico n.
+		\end{enumerate}
+
+\chapter{Revisão da Literatura}
+	
+	Trata-se de um texto que apresenta de forma	geral os fundamentos teóricos (ou bases	teóricas) e conceituais do trabalho. Deve destacar as principais obras e teorias da área em estudo. Deve estar bem referenciado.
+	
+	\begin{citacao}
+		Exemplo de citação direta. \cite{Brandao2016}
+	\end{citacao}
+	
+	Citação indireta \cite{Brandao2016}.
+	
+	Citando o autor \textit{inline}: \citeonline{Brandao2016}.
+	
+	Citando apenas o nome do autor: \citeauthoronline{Brandao2016}.
+	
+\chapter{Procedimentos metodológicos}
+	
+	Deve dizer como o trabalho será realizado. Aborda quatro componentes: descrição do foco do estudo; caracterização da pesquisa (tipo de pesquisa); plano de coleta de dados (técnicas e instrumentos de coleta de dados e informações afins); plano de análise dos dados (técnicas de sistematização e análise dos dados e as formas de apresentação dos resultados).
+
+\chapter{Cronograma}
+
+	Parte final do texto na qual são apresentadas as considerações finais acerca dos objetivos, das variáveis e do problema da pesquisa. Não usar esta seção para sumarizar os resultados (o que já foi feito no Resumo), mas destacar o progresso e as aplicações que o trabalho propicia. Enfatizar as limitações que persistem, apresentando, sempre que apropriado, sugestões para trabalhos futuros.
+
+% Finaliza o bookmarking do PDF
+\phantompart
+
+% ------------------------------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ------------------------------------------------------------------------------
+
+% Introduz a parte pós-textual
+\postextual
+
+% Insere as referências bibliográficas
+\bibliography{bibliografia}
+
+\end{document}

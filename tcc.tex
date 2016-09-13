@@ -1,0 +1,384 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% IFTO-Tex (v1.0)
+% https://github.com/renatouchoa/ifto-tex
+%
+% MODELO DO TRABALHO DE CONCLUSÃO DE CURSO DO IFTO
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% MIT License
+% 
+% Copyright (c) 2016 Renato Uchôa Brandão
+% 
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+% 
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+% 
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{ifto-tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inclusão de pacotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{float}
+
+% Uso da fonte Arial (IFTO)
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Incluir pacotes adicionais, caso sejam necessários ....
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configuração das citações
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf,
+versalete,
+abnt-emphasize = bf, % destaca o titulo em negrito;
+abnt-etal-list = 3, % trabalhos com mais de 3 autores recebem et al.,;
+abnt-etal-text = it, % escreve o et al., em italico;
+abnt-and-type = &, % usa o carater '&' no lugar de 'e' para mais de um autor;
+abnt-last-names = abnt, % trata sobrenomes 'estritamente' conforme a ABNT; e
+abnt-repeated-author-omit = yes % autores com + de uma entrada recebem '____.'
+]{abntex2cite}
+
+% Configuração das referências bibliográficas
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Informações da capa e da folha de rosto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titulo{TÍTULO DO TRABALHO: Subtítulo do trabalho}
+
+\autor{Autor(a) do Trabalho}
+
+\local{Paraíso do Tocantins, TO}
+
+\data{2016}
+
+% Alterar o nome do campus e do curso, caso houver necessidade
+\instituicao{
+	Instituto Federal de Educação, Ciência e Tecnologia do Tocantins - IFTO\\
+	Campus Paraíso do Tocantins\\
+	Curso Superior de Tecnologia em Gestão da Tecnologia da Informação
+}
+
+\tipotrabalho{TCC}
+
+% Informar {Titulação}{Nome}
+\orientador{Prof(a). Dr(a).}{Nome do(a) Professor(a) Orientador(a)}
+
+% Alterar o preâmbulo conforme necessário
+\preambulo{Trabalho de Conclusão de Curso
+	apresentado como requisito parcial para
+	obtenção do Título de tecnólogo do Curso Superior
+	de Tecnologia em Gestão da Tecnologia da Informação do Instituto Federal do Tocantins,
+	Campus Paraíso do Tocantins
+}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Outras configurações
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configuração da geração do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		colorlinks=false,
+		bookmarksdepth=4,
+		pdfborder={0 0 0},
+}
+\makeatother
+
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% compila o indice
+\makeindex
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CORPO DO TRABALHO ...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% Inicializa a parte pre-textual
+\pretextual
+
+% Imprime a capa
+\imprimircapa
+
+% Imprime a folha de rosto
+\imprimirfolhaderosto
+
+
+% ------------------------------------------------------------------------------
+% FOLHA DE APROVACAO
+% ------------------------------------------------------------------------------
+% Atenção: Alterar apenas a data e o nome dos convidados
+\begin{folhadeaprovacao}
+	
+	\begin{center}
+		{\ABNTEXchapterfont\bfseries\normalsize\imprimirautor}
+		
+		\vspace*{\fill}\vspace*{\fill}
+		\begin{center}
+			\ABNTEXchapterfont\bfseries\normalsize\imprimirtitulo
+		\end{center}
+		\vspace*{\fill}
+		
+		\hspace{.45\textwidth}
+		\begin{minipage}{.5\textwidth}
+			\imprimirpreambulo
+		\end{minipage}%
+		\vspace*{\fill}
+	\end{center}
+	
+	Trabalho aprovado. \imprimirlocal, 24 de novembro de 2016:
+	
+	\assinatura{\textbf{\imprimirorientador} \\ Orientador} 
+	\assinatura{\textbf{Prof. Dr. Fulano de tal} \\ Convidado 1}
+	\assinatura{\textbf{Prof. Dr. Nome do outro convidado} \\ Convidado 2}
+	
+	\begin{center}
+		\vspace*{0.5cm}
+		{\normalsize\bfseries\imprimirlocal}
+		\par
+		{\normalsize\bfseries\imprimirdata}
+		\vspace*{1cm}
+	\end{center}
+	
+\end{folhadeaprovacao}
+
+
+% ------------------------------------------------------------------------------
+% AGRADECIMENTOS
+% ------------------------------------------------------------------------------
+\begin{agradecimentos}
+	Folha em que o autor faz agradecimentos àqueles que contribuíram de maneira relevante para a realização do TCC...
+\end{agradecimentos}
+
+
+% ------------------------------------------------------------------------------
+% EPIGRAFE
+% ------------------------------------------------------------------------------
+\begin{epigrafe}
+	\vspace*{\fill}
+	\begin{flushright}
+		\textit{
+			``Folha em que o autor apresenta uma citação,\\
+			seguida da indicação da autoria, relacionada com a\\
+			matéria tratada no corpo do trabalho.``\\
+			(Nome do autor)
+		}
+	\end{flushright}
+\end{epigrafe}
+
+
+% ------------------------------------------------------------------------------
+% RESUMO e ABSTRACT
+% ------------------------------------------------------------------------------
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+
+% Resumo em português
+\begin{resumo}
+	Apresentação concisa dos pontos relevantes do TCC, fornecendo uma visão rápida e clara dos objetivos, dos procedimentos metodológicos e das conclusões do trabalho.
+	
+	\textbf{Palavras-chave}: pc1, pc2, pc3 ...
+\end{resumo}
+
+% resumo em inglês (Abstract)
+\begin{resumo}[Abstract]
+	\begin{otherlanguage*}{english}
+		English abstract version.
+		
+		\noindent 
+		\textbf{Keywords}: kw1. kw2. kw ...
+	\end{otherlanguage*}
+\end{resumo}
+
+
+% ------------------------------------------------------------------------------
+% LISTA DE FIGURAS (Não altere nada aqui)
+% ------------------------------------------------------------------------------
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+
+% ------------------------------------------------------------------------------
+% LISTA DE TABELAS (Não altere nada aqui)
+% ------------------------------------------------------------------------------
+\pdfbookmark[0]{\contentsname}{lot}
+\listoftables*
+\cleardoublepage
+
+% ------------------------------------------------------------------------------
+% LISTA DE SIGLAS E ABREVIATURAS
+% ------------------------------------------------------------------------------
+% Edite a lista de siglas conforme o modelo abaixo
+\begin{siglas}
+	\item[IBGE]{Instituto Brasileiro de Geografia e Estatística}
+	\item[IFTO]{Instituto Federal do Tocantins}
+	% Incluir as siglas aqui ...
+\end{siglas}
+
+
+% ------------------------------------------------------------------------------
+% SUMÁRIO (Não altere nada aqui)
+% ------------------------------------------------------------------------------
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% ------------------------------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ------------------------------------------------------------------------------
+
+% Introduz a parte textual
+\textual
+
+\chapter{Introdução}
+
+	Parte inicial do texto que visa inserir o leitor no assunto trabalhado na sequência. Deve apresentar de forma geral o trabalho e, em especial, deve abordar o problema, os objetivos e a justificativa do trabalho.
+
+	\section{Problema de pesquisa}
+	
+		Apresentação do problema que norteará a pesquisa para o TCC. A enunciação do problema deve ser,	preferencialmente, em forma de uma pergunta.
+	
+	\section{Justificativa}
+	
+		Texto construído com a intenção de mostrar	a relevância, a importância, a pertinência e a viabilidade do trabalho.
+	
+	\section{Objetivos}
+	
+		\subsection{Objetivo geral}
+		
+			O Objetivo Geral deve ter relação íntima com o problema de	pesquisa e deve apontar o rumo a ser percorrido para encontrar a resposta. Já os	Objetivos Específicos desdobram o Objetivo Geral nos passos necessários para executar o	Objetivo Geral. Os objetivos devem indicar	exatamente a ação a ser tomada.
+		
+		\subsection{Objetivos específicos}
+		
+			\begin{enumerate}
+				\item Objetivo específico 1;
+				\item Objetivo específico 2;
+				\item Objetivo específico n.
+			\end{enumerate}
+
+\chapter{Revisão da Literatura}
+	
+	Trata-se de um texto que apresenta de forma	geral os fundamentos teóricos (ou bases	teóricas) e conceituais do trabalho. Deve destacar as principais obras e teorias da área em estudo. Deve estar bem referenciado.
+	
+	\begin{citacao}
+		Exemplo de citação direta. \cite{Brandao2016}
+	\end{citacao}
+	
+	Citação indireta \cite{Brandao2016}.
+	
+	Citando o autor \textit{inline}: \citeonline{Brandao2016}.
+	
+	Citando apenas o nome do autor: \citeauthoronline{Brandao2016}.
+	
+\chapter{Metodologia}
+	
+	Deve dizer como o trabalho será realizado. Aborda quatro componentes: descrição do foco do estudo; caracterização da pesquisa (tipo de pesquisa); plano de coleta de dados (técnicas e instrumentos de coleta de dados e informações afins); plano de análise dos dados (técnicas de sistematização e análise dos dados e as formas de apresentação dos resultados).
+	
+\chapter{Desenvolvimento...}
+	
+	Demais capítulos do desenvolvimento do trabalho...
+
+\chapter{Considerações finais}
+
+	Parte final do texto na qual são apresentadas as considerações finais acerca dos objetivos, das variáveis e do problema da pesquisa. Não usar esta seção para sumarizar os resultados (o que já foi feito no Resumo), mas destacar o progresso e as aplicações que o trabalho propicia. Enfatizar as limitações que persistem, apresentando, sempre que apropriado, sugestões para trabalhos futuros.
+
+% Finaliza o bookmarking do PDF
+\phantompart
+
+% ------------------------------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ------------------------------------------------------------------------------
+
+% Introduz a parte pós-textual
+\postextual
+
+% Insere as referências bibliográficas
+\bibliography{bibliografia}
+
+% ----------------- APÊNDICES -----------------
+\begin{apendicesenv}
+	
+	\partapendices
+	
+	\chapter{Título do Apêndice}
+	
+		Documento ou texto “elaborado” pelo autor, inserido ou referido no trabalho a fim de complementar a sua argumentação. Para	não haver prejuízo à unidade nuclear do	trabalho, cópia integral do documento é	acrescida ao final.
+		
+	\chapter{Outro Apêndice}
+	
+		Outro documento ou texto “elaborado” pelo autor, inserido ou referido no trabalho a fim de complementar a sua argumentação. Para	não haver prejuízo à unidade nuclear do	trabalho, cópia integral do documento é	acrescida ao final.
+	
+	% Inserir outros apêndices caso seja necessário ...
+	
+\end{apendicesenv}
+
+
+% ----------------- ANEXOS -----------------
+\begin{anexosenv}
+	
+	\partanexos
+	
+	\chapter{Título do Anexo}
+	
+		Documento ou texto “não elaborado”	pelo autor, inserido ou referido no trabalho, a fim de fundamentar, comprovar ou ilustrar a sua argumentação. Igualmente, para não haver prejuízo à unidade nuclear do trabalho, cópia integral do documento é acrescida ao final do trabalho.
+		
+	\chapter{Outro Anexo}
+	
+		Outro documento ou texto “não elaborado”	pelo autor, inserido ou referido no trabalho, a fim de fundamentar, comprovar ou ilustrar a sua argumentação. Igualmente, para não haver prejuízo à unidade nuclear do trabalho, cópia integral do documento é acrescida ao final do trabalho.
+	
+\end{anexosenv}
+
+\end{document}

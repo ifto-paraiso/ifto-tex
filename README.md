@@ -19,6 +19,8 @@ Siga os seguintes passos:
 
 > Se você é iniciante em LaTeX ou em abnTex2, dê uma conferida nos [manuais do abnTex2](https://github.com/abntex/abntex2/wiki/PorOndeComecar).
 
+> Consulte o [manual de referências](http://get-software.net/macros/latex/contrib/abntex2/doc/abntex2cite-alf.pdf) para entender como manter a bibliografia e fazer citações no seu documento.
+
 ## Regulamento de Trabalho de Conclusão de Curso (TCC) dos Cursos de Graduação Presenciais do IFTO
 
 Aprovado pela Resolução *ad referendum* no 02/2012/CONSUP/IFTO, de 30 de agosto de 2012, referendado e alterado pela Resolução no 34/2012/CONSUP/IFTO, de 24 de outubro de 2012 e alterado pela Resolução no 72/2013/CONSUP/IFTO, de 11 de dezembro de 2013 e alterado pela Resolução no 44/2015/CONSUP/IFTO, de 22 de setembro de 2015.

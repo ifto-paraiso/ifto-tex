@@ -13,11 +13,12 @@ O IFTO-TeX procura implementar o Regulamento de Trabalho de Conclusão de Curso 
 
 Siga os seguintes passos:
 
-1. Clique aqui para baixar o modelo IFTO-TEX;
+1. [Clique aqui](https://github.com/renatouchoa/ifto-tex/archive/master.zip) para baixar o modelo IFTO-TeX;
 2. Descompacte o arquivo no diretório onde você deseja guardar os arquivos do seu trabalho;
 3. Crie o seu texto a partir do arquivo **tcc.tex** (ou **pre-projexo.tex**) distribuído no arquivo baixado. O arquivo possui comentários explicativos.
 
 > Se você é iniciante em LaTeX ou em abnTex2, dê uma conferida nos [manuais do abnTex2](https://github.com/abntex/abntex2/wiki/PorOndeComecar).
+
 
 > Consulte o [manual de referências](http://get-software.net/macros/latex/contrib/abntex2/doc/abntex2cite-alf.pdf) para entender como manter a bibliografia e fazer citações no seu documento.
 
